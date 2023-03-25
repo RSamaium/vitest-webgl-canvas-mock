@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import CanvasRenderingContext2D from './CanvasRenderingContext2D';
 
 // Path2D.prototype
@@ -25,10 +26,10 @@ export default class Path2D {
 
   constructor() {
     borrowedFromCanvas.forEach((key) => {
-      this[key] = jest.fn(CanvasRenderingContext2D.prototype[key].bind(this));
+      this[key] = vi.fn(CanvasRenderingContext2D.prototype[key].bind(this));
     });
     Path2DFunc.forEach((key) => {
-      this[key] = jest.fn(this[key].bind(this));
+      this[key] = vi.fn(this[key].bind(this));
     });
   }
 

@@ -4,6 +4,7 @@ import parseColor from 'parse-color';
 import cssfontparser from 'cssfontparser';
 import TextMetrics from './TextMetrics';
 import createCanvasEvent from '../mock/createCanvasEvent';
+import { vi } from 'vitest';
 // import HTMLCanvasElement from "./HTMLCanvasElement";
 
 function parseCSSColor(value) {
@@ -87,7 +88,7 @@ export default class CanvasRenderingContext2D {
 
   constructor(canvas, contextAttributes) {
     testFuncs.forEach(key => {
-      this[key] = jest.fn(CanvasRenderingContext2D.prototype[key].bind(this));
+      this[key] = vi.fn(CanvasRenderingContext2D.prototype[key].bind(this));
     });
     this._canvas = canvas;
     this._contextAttributes = contextAttributes;

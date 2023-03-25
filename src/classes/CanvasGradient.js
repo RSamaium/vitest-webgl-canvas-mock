@@ -1,8 +1,9 @@
 import parseColor from 'parse-color';
+import { vi } from 'vitest';
 
 export default class CanvasGradient {
   constructor() {
-    this.addColorStop = jest.fn(this.addColorStop.bind(this));
+    this.addColorStop = vi.fn(this.addColorStop.bind(this));
   }
   addColorStop(offset, color) {
     const numoffset = Number(offset);

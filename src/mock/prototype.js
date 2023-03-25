@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import CanvasRenderingContext2D from "../classes/CanvasRenderingContext2D";
 import WebGLRenderingContext from "../classes/WebGLRenderingContext";
 
@@ -40,7 +41,7 @@ export default function mockPrototype() {
    * This function technically throws SecurityError at runtime, but it cannot be mocked, because
    * we don't know if the canvas is tainted. These kinds of errors will be silent.
    */
-  const toBlobOverride = jest.fn(function toBlobOverride(callback, mimetype) {
+  const toBlobOverride = vi.fn(function toBlobOverride(callback, mimetype) {
     if (arguments.length < 1) throw new TypeError('Failed to execute \'toBlob\' on \'HTMLCanvasElement\': 1 argument required, but only 0 present.');
     if (typeof callback !== 'function') throw new TypeError('Failed to execute \'toBlob\' on \'HTMLCanvasElement\': The callback provided as parameter 1 is not a function.');
 
@@ -64,7 +65,7 @@ export default function mockPrototype() {
     setTimeout(() => callback(blob), 0);
   });
 
-  if (!jest.isMockFunction(HTMLCanvasElement.prototype.toBlob)) {
+  if (!vi.isMockFunction(HTMLCanvasElement.prototype.toBlob)) {
     toBlobOverride.internal = HTMLCanvasElement.prototype.toBlob;
   } else {
     toBlobOverride.internal = HTMLCanvasElement.prototype.toBlob.internal;
@@ -75,7 +76,7 @@ export default function mockPrototype() {
    * This section creates a dataurl with a validated mime type. This is not actually valid, because
    * jpeg size is variable, and so is png. TODO: Is there a better way to do this?
    */
-  const toDataURLOverride = jest.fn(function toDataURLOverride(type, encoderOptions) {
+  const toDataURLOverride = vi.fn(function toDataURLOverride(type, encoderOptions) {
     switch(type) {
       case 'image/jpeg': break;
       case 'image/webp': break;
@@ -88,7 +89,7 @@ export default function mockPrototype() {
     return 'data:' + type + ';base64,00';
   });
 
-  if (!jest.isMockFunction(HTMLCanvasElement.prototype.toDataURL)) {
+  if (!vi.isMockFunction(HTMLCanvasElement.prototype.toDataURL)) {
     toDataURLOverride.internal = HTMLCanvasElement.prototype.toDataURL;
   } else {
     toDataURLOverride.internal = HTMLCanvasElement.prototype.toBlob.internal;

@@ -1,6 +1,7 @@
+import { vi } from 'vitest';
 import ImageBitmap from '../classes/ImageBitmap';
 
-export default jest.fn(function createImageBitmap(img, sx, sy, sWidth, sHeight, options) {
+export default vi.fn(function createImageBitmap(img, sx, sy, sWidth, sHeight, options) {
   var length = arguments.length;
   return new Promise((resolve, reject) => {
     if (length === 0) return reject(new TypeError('Failed to execute \'createImageBitmap\' on \'Window\': 1 argument required, but only 0 present.'));

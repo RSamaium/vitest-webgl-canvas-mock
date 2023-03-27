@@ -3,5 +3,4 @@
 __tests__
 .idea
 coverage
-src
 *.tgz

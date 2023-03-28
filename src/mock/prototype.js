@@ -1,6 +1,6 @@
 import { vi } from "vitest";
-import CanvasRenderingContext2D from "../classes/CanvasRenderingContext2D";
-import WebGLRenderingContext from "../classes/WebGLRenderingContext";
+import CanvasRenderingContext2D from "../classes/CanvasRenderingContext2D.js";
+import WebGLRenderingContext from "../classes/WebGLRenderingContext.js";
 
 export default function mockPrototype() {
   /**

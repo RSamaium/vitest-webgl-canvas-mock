@@ -3,18 +3,18 @@
  * Contract: i@hust.cc
  */
 
-import Path2D from './classes/Path2D';
-import CanvasGradient from './classes/CanvasGradient';
-import CanvasPattern from './classes/CanvasPattern';
-import CanvasRenderingContext2D from './classes/CanvasRenderingContext2D';
-import DOMMatrix from './classes/DOMMatrix';
-import ImageData from './classes/ImageData';
-import TextMetrics from './classes/TextMetrics';
-import ImageBitmap from './classes/ImageBitmap';
-import mockPrototype from './mock/prototype';
-import createImageBitmap from './mock/createImageBitmap';
-import Image from './classes/Image';
-import WebGLRenderingContext from './classes/WebGLRenderingContext';
+import Path2D from './classes/Path2D.js';
+import CanvasGradient from './classes/CanvasGradient.js';
+import CanvasPattern from './classes/CanvasPattern.js';
+import CanvasRenderingContext2D from './classes/CanvasRenderingContext2D.js';
+import DOMMatrix from './classes/DOMMatrix.js';
+import ImageData from './classes/ImageData.js';
+import TextMetrics from './classes/TextMetrics.js';
+import ImageBitmap from './classes/ImageBitmap.js';
+import mockPrototype from './mock/prototype.js';
+import createImageBitmap from './mock/createImageBitmap.js';
+import Image from './classes/Image.js';
+import WebGLRenderingContext from './classes/WebGLRenderingContext.js';
 
 export default win => {
   const d = win.document;

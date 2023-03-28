@@ -1,9 +1,9 @@
-import DOMMatrix from './DOMMatrix';
-import CanvasPattern from './CanvasPattern';
+import DOMMatrix from './DOMMatrix.js';
+import CanvasPattern from './CanvasPattern.js';
 import parseColor from 'parse-color';
 import cssfontparser from 'cssfontparser';
-import TextMetrics from './TextMetrics';
-import createCanvasEvent from '../mock/createCanvasEvent';
+import TextMetrics from './TextMetrics.js';
+import createCanvasEvent from '../mock/createCanvasEvent.js';
 import { vi } from 'vitest';
 // import HTMLCanvasElement from "./HTMLCanvasElement";
 

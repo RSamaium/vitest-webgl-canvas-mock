@@ -1,5 +1,5 @@
 import { vi } from 'vitest';
-import ImageBitmap from '../classes/ImageBitmap';
+import ImageBitmap from '../classes/ImageBitmap.js';
 
 export default vi.fn(function createImageBitmap(img, sx, sy, sWidth, sHeight, options) {
   var length = arguments.length;

@@ -1,7 +1,4 @@
-/// <reference types="vitest" />
-import { defineConfig } from 'vite'
-
-export default defineConfig({
+export default {
     test: {
         include: ['__tests__/classes/*.js'],
         coverage: {
@@ -17,4 +14,4 @@ export default defineConfig({
         globals: true,
         environment: 'jsdom'
     }
-})
+}

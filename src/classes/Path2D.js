@@ -1,5 +1,5 @@
 import { vi } from 'vitest';
-import CanvasRenderingContext2D from './CanvasRenderingContext2D';
+import CanvasRenderingContext2D from './CanvasRenderingContext2D.js';
 
 // Path2D.prototype
 const Path2DFunc = [

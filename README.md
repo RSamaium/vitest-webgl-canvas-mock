@@ -28,11 +28,11 @@ import 'vitest-webgl-canvas-mock';
 
 In `vitest.config.js`
 ```js
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
     test: {
-        setupFiles: ['__setups__/canvas.js']
+        setupFiles: ['__setups__/canvas.js'],
         environment: 'jsdom'
     }
 })
